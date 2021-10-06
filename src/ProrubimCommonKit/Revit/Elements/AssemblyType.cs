@@ -11,22 +11,16 @@ namespace Prorubim.Common.Revit.Elements
     [DynamoServices.RegisterForTrace]
     public class AssemblyType : RS.Element
     {
-        internal static Document Document
-        {
-            get { return DocumentManager.Instance.CurrentDBDocument; }
-        }
+        internal static Document Document => DocumentManager.Instance.CurrentDBDocument;
 
         internal Autodesk.Revit.DB.AssemblyType InternalAssemblyType
         {
             get; private set;
         }
         
-        public override Autodesk.Revit.DB.Element InternalElement
-        {
-            get { return InternalAssemblyType; }
-        }
+        public override Autodesk.Revit.DB.Element InternalElement => InternalAssemblyType;
 
-        
+
         private AssemblyType(string name)
         {
             SafeInit(() => InitAssemblyType(name));

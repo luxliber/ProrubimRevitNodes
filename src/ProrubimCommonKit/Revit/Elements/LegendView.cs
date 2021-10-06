@@ -36,7 +36,7 @@ namespace Prorubim.Common.Revit.Elements
         private void InitLegendView(string name)
         {
             var collector = new FilteredElementCollector(Document);
-            var view = collector.OfClass(typeof(Autodesk.Revit.DB.View)).Cast<Autodesk.Revit.DB.View>().First(x => x.ViewType == ViewType.Legend && x.ViewName == name);
+            var view = collector.OfClass(typeof(Autodesk.Revit.DB.View)).Cast<Autodesk.Revit.DB.View>().First(x => x.ViewType == ViewType.Legend && x.Name == name);
 
             InternalSetLegendView(view);
             ElementBinder.CleanupAndSetElementForTrace(Document, InternalElement);

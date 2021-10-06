@@ -57,14 +57,16 @@ namespace Prorubim.Common.Revit.Elements
 
             Autodesk.Revit.DB.ImageType im;
 
+            var imPOpts = new ImageTypeOptions(path, false, ImageTypeSource.Import);
+
             if (File.Exists(path) && res.Any())
             {
-                res.First().ReloadFrom(path);
+                res.First().ReloadFrom(imPOpts);
                 im = res.First();
             }
             else
             {
-                im = Autodesk.Revit.DB.ImageType.Create(Document, path);
+                im = Autodesk.Revit.DB.ImageType.Create(Document, imPOpts);
             }
 
             TransactionManager.Instance.TransactionTaskDone();
@@ -97,7 +99,7 @@ namespace Prorubim.Common.Revit.Elements
 
             if (res.Any())
                 return new ImageType(res.First());
-            
+
             return null;
         }
 
@@ -110,7 +112,7 @@ namespace Prorubim.Common.Revit.Elements
         {
             return new ImageType(path);
         }
-        
+
         public override string ToString()
         {
             return String.Format("ImageType - {0}", InternalImageType.Path);
@@ -122,7 +124,7 @@ namespace Prorubim.Common.Revit.Elements
             // Do not cleanup Revit elements if we are shutting down Dynamo or
             // closing homeworkspace.
             //if (DisposeLogic.IsShuttingDown || DisposeLogic.IsClosingHomeworkspace)
-              //  return;
+            //  return;
             //    InternalElementId = null;
         }
     }

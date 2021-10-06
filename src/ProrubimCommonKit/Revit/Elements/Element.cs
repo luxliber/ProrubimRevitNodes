@@ -11,12 +11,9 @@ namespace Prorubim.Common.Revit.Elements
 {
     public class Element
     {
-        internal static Document Document
-        {
-            get { return DocumentManager.Instance.CurrentDBDocument; }
-        }
+        internal static Document Document => DocumentManager.Instance.CurrentDBDocument;
 
-        
+
         private Element(){}
 
         /// <summary>

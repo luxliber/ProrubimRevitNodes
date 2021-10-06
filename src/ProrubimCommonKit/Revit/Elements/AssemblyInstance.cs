@@ -1,7 +1,5 @@
 ﻿using System.Linq;
-using Autodesk.DesignScript.Runtime;
 using Autodesk.Revit.DB;
-using RevitServices.Elements;
 using RevitServices.Persistence;
 using System;
 using System.Collections.Generic;
@@ -15,20 +13,14 @@ namespace Prorubim.Common.Revit.Elements
     [DynamoServices.RegisterForTrace]
     public class AssemblyInstance : RS.Element
     {
-        internal static Document Document
-        {
-            get { return DocumentManager.Instance.CurrentDBDocument; }
-        }
+        internal static Document Document => DocumentManager.Instance.CurrentDBDocument;
 
         internal Autodesk.Revit.DB.AssemblyInstance InternalAssemblyInstance
         {
             get; private set;
         }
         
-        public override Autodesk.Revit.DB.Element InternalElement
-        {
-            get { return InternalAssemblyInstance; }
-        }
+        public override Autodesk.Revit.DB.Element InternalElement => InternalAssemblyInstance;
 
 
         internal AssemblyInstance(Autodesk.Revit.DB.AssemblyInstance el)

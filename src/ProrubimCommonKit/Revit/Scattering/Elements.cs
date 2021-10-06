@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Autodesk.DesignScript.Geometry;
 using Autodesk.Revit.DB;
 using Revit.Elements;
-using Revit.GeometryConversion;
 using RevitServices.Persistence;
 using RevitServices.Transactions;
 using Element = Autodesk.Revit.DB.Element;
@@ -16,10 +14,7 @@ namespace Prorubim.Common.Revit.Scattering
 {
     public class Elements
     {
-        internal static Document Document
-        {
-            get { return DocumentManager.Instance.CurrentDBDocument; }
-        }
+        internal static Document Document => DocumentManager.Instance.CurrentDBDocument;
 
         private Elements() { }
 
@@ -41,9 +36,9 @@ namespace Prorubim.Common.Revit.Scattering
                 return -trf.BasisX.AngleOnPlaneTo(rightDirection, viewDirection);
             }
             
-            if (fi.GetType() == typeof(Group))
+            if (fi.GetType() == typeof(Autodesk.Revit.DB.Group))
             {
-                var fii =((Group)fi).GetMemberIds().Select(x=>Document.GetElement(x)).Where(x => x.Location.GetType() == typeof(LocationPoint));
+                var fii =((Autodesk.Revit.DB.Group)fi).GetMemberIds().Select(x=>Document.GetElement(x)).Where(x => x.Location.GetType() == typeof(LocationPoint));
                 if(fii.Any())
                 {
                     var loc = fii.First().Location;
@@ -57,10 +52,9 @@ namespace Prorubim.Common.Revit.Scattering
 
         internal static XYZ GetLocationOfInstance(Element fi)
         {
-            if (fi.GetType() == typeof(FamilyInstance) || fi.GetType() == typeof(Group))
+            if (fi.GetType() == typeof(FamilyInstance) || fi.GetType() == typeof(Autodesk.Revit.DB.Group))
             {
-                var loc = fi.Location as LocationPoint;
-                if (loc != null) return loc.Point;
+                if (fi.Location is LocationPoint loc) return loc.Point;
             }
 
             if (fi.GetType() == typeof(AssemblyInstance))

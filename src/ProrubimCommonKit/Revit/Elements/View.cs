@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Tracing;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using RevitServices.Persistence;
@@ -89,7 +86,7 @@ namespace Prorubim.Common.Revit.Elements
         public static string ViewName(RS.Views.View view)
         {
             var uv = view.InternalElement as Autodesk.Revit.DB.View;
-            return uv==null?null:uv.ViewName;
+            return uv?.Name;
         }
 
         /// <summary>
