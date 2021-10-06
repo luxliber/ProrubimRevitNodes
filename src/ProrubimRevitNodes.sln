@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProrubimCommonKit", "ProrubimCommonKit\ProrubimCommonKit.csproj", "{E9837691-7245-4E24-8352-2AD4F6093355}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProrubimCommonKitUI", "ProrubimCommonKitUI\ProrubimCommonKitUI.csproj", "{B0AB9CC8-4CE6-4F7E-9EEB-6A45A568BE6D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9837691-7245-4E24-8352-2AD4F6093355}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9837691-7245-4E24-8352-2AD4F6093355}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9837691-7245-4E24-8352-2AD4F6093355}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9837691-7245-4E24-8352-2AD4F6093355}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0AB9CC8-4CE6-4F7E-9EEB-6A45A568BE6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0AB9CC8-4CE6-4F7E-9EEB-6A45A568BE6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0AB9CC8-4CE6-4F7E-9EEB-6A45A568BE6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0AB9CC8-4CE6-4F7E-9EEB-6A45A568BE6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

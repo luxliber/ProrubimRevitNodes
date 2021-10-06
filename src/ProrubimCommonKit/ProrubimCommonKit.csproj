@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E9837691-7245-4E24-8352-2AD4F6093355}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Prorubim.Common</RootNamespace>
+    <AssemblyName>ProrubimCommonKit</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\packages\Prorubim Common Kit\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\..\packages\Prorubim Common Kit\bin\ProrubimCommonKit.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\packages\Prorubim Common Kit\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DynamoCore">
+      <HintPath>..\..\..\..\__dyno__\__repos__\DynamoLuxliber\Dynamo\bin\AnyCPU\Debug\DynamoCore.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DynamoServices">
+      <HintPath>C:\Program Files\Dynamo 0.9\DynamoServices.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ProtoGeometry">
+      <HintPath>..\..\..\..\__dyno__\__repos__\DynamoLuxliber\Dynamo\bin\AnyCPU\Debug\ProtoGeometry.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ProtoInterface">
+      <HintPath>..\..\..\..\__dyno__\__repos__\DynamoLuxliber\Dynamo\bin\AnyCPU\Debug\ProtoInterface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2016\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>C:\Program Files\Autodesk\Revit 2016\RevitAPIUI.dll</HintPath>
+    </Reference>
+    <Reference Include="RevitNodes">
+      <HintPath>C:\Program Files\Dynamo 0.9\Revit_2016\RevitNodes.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitServices">
+      <HintPath>..\..\..\..\__dyno__\__repos__\DynamoLuxliber\Dynamo\bin\AnyCPU\Debug\Revit_2016\RevitServices.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Revit\Elements\AssemblyInstance.cs" />
+    <Compile Include="Revit\Elements\AssemblyType.cs" />
+    <Compile Include="Revit\Scattering\Elements.cs" />
+    <Compile Include="Revit\Elements\ImageType.cs" />
+    <Compile Include="Revit\Elements\LegendView.cs" />
+    <Compile Include="Revit\Elements\View.cs" />
+    <Compile Include="Revit\Elements\Element.cs" />
+    <Compile Include="Revit\Elements\LegendElement.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ProrubimCommonKitImages.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.AddMembers.Large.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.AddMembers.Small.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.AddMembersInAllInstances.Large.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.AddMembersInAllInstances.Small.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.AssemblyType.Large.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.AssemblyType.Small.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.CastFromElement.Large.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.CastFromElement.Small.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.ChangeAssemblyType.Large.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.ChangeAssemblyType.Small.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.Create.Large.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.Create.Small.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.Disassemble.Large.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.Disassemble.Small.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.Members.Large.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.Members.Small.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.RemoveMembers.Large.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.RemoveMembers.Small.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.RemoveMembersInAllInstances.Large.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.RemoveMembersInAllInstances.Small.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.RenameAssemblyType.Large.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.RenameAssemblyType.Small.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.ReplaceMembers.Large.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.ReplaceMembers.Small.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.ReplaceMembersInAllInstances.Large.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.ReplaceMembersInAllInstances.Small.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.SyncAssemblyInstance.Large.png" />
+    <Content Include="Resources\AssemblyInstance\Prorubim.Common.Revit.Elements.AssemblyInstance.SyncAssemblyInstance.Small.png" />
+    <Content Include="Resources\AssemplyType\Prorubim.Common.Revit.Elements.AssemblyType.AllInstances.Large.png" />
+    <Content Include="Resources\AssemplyType\Prorubim.Common.Revit.Elements.AssemblyType.AllInstances.Small.png" />
+    <Content Include="Resources\AssemplyType\Prorubim.Common.Revit.Elements.AssemblyType.ByName.Large.png" />
+    <Content Include="Resources\AssemplyType\Prorubim.Common.Revit.Elements.AssemblyType.ByName.Small.png" />
+    <Content Include="Resources\AssemplyType\Prorubim.Common.Revit.Elements.AssemblyType.CastFromElement.Large.png" />
+    <Content Include="Resources\AssemplyType\Prorubim.Common.Revit.Elements.AssemblyType.CastFromElement.Small.png" />
+    <Content Include="Resources\AssemplyType\Prorubim.Common.Revit.Elements.AssemblyType.Rename.Large.png" />
+    <Content Include="Resources\AssemplyType\Prorubim.Common.Revit.Elements.AssemblyType.Rename.Small.png" />
+    <Content Include="Resources\Elements\Prorubim.Common.Revit.Scattering.Elements.ScatterAndAlign.Large.png" />
+    <Content Include="Resources\Elements\Prorubim.Common.Revit.Scattering.Elements.ScatterAndAlign.Small.png" />
+    <Content Include="Resources\Element\Prorubim.Common.Revit.Elements.Element.FindNeighbourElements.Large.png" />
+    <Content Include="Resources\Element\Prorubim.Common.Revit.Elements.Element.FindNeighbourElements.Small.png" />
+    <Content Include="Resources\Element\Prorubim.Common.Revit.Elements.Element.FindSimilarElements.Large.png" />
+    <Content Include="Resources\Element\Prorubim.Common.Revit.Elements.Element.FindSimilarElements.Small.png" />
+    <Content Include="Resources\ImageType\Prorubim.Common.Revit.Elements.ImageType.ByPath.Large.png" />
+    <Content Include="Resources\ImageType\Prorubim.Common.Revit.Elements.ImageType.ByPath.Small.png" />
+    <Content Include="Resources\ImageType\Prorubim.Common.Revit.Elements.ImageType.Load.Large.png" />
+    <Content Include="Resources\ImageType\Prorubim.Common.Revit.Elements.ImageType.Load.Small.png" />
+    <Content Include="Resources\LegendElement\Prorubim.Common.Revit.Elements.LegendElement.ByFamilyType.Large.png" />
+    <Content Include="Resources\LegendElement\Prorubim.Common.Revit.Elements.LegendElement.ByFamilyType.Small.png" />
+    <Content Include="Resources\LegendView\Prorubim.Common.Revit.Elements.LegendView.ByName.Large.png" />
+    <Content Include="Resources\LegendView\Prorubim.Common.Revit.Elements.LegendView.ByName.Small.png" />
+    <Content Include="Resources\View\Prorubim.Common.Revit.Elements.View.ViewName.Large.png" />
+    <Content Include="Resources\View\Prorubim.Common.Revit.Elements.View.ViewName.Small.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+    <!-- Get System.Drawing.dll -->
+    <GetReferenceAssemblyPaths TargetFrameworkMoniker=".NETFramework, Version=v2.0">
+      <Output TaskParameter="FullFrameworkReferenceAssemblyPaths" PropertyName="FrameworkAssembliesPath" />
+    </GetReferenceAssemblyPaths>
+    <!-- Get assembly -->
+    <GetAssemblyIdentity AssemblyFiles="$(OutDir)$(TargetName).dll">
+      <Output TaskParameter="Assemblies" ItemName="AssemblyInfo" />
+    </GetAssemblyIdentity>
+    <!-- Generate customization dll -->
+    <GenerateResource UseSourcePath="true" Sources="$(ProjectDir)\Resources\ProrubimCommonKitImages.resx" OutputResources="$(ProjectDir)\Resources\ProrubimCommonKitImages.resources" References="$(FrameworkAssembliesPath)System.Drawing.dll" />
+    <AL TargetType="library" EmbedResources="$(ProjectDir)\Resources\ProrubimCommonKitImages.resources" OutputAssembly="$(OutDir)ProrubimCommonKit.customization.dll" Version="%(AssemblyInfo.Version)" />
+  </Target>
+</Project>
