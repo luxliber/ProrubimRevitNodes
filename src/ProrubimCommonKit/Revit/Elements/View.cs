@@ -102,7 +102,7 @@ namespace Prorubim.Common.Revit.Elements
             return new Dictionary<string, object>
             {
                 {"path", path},
-                {"ImageType", imageType}
+                {"imageType", imageType}
             };
         }
 
