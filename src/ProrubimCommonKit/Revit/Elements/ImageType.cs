@@ -12,21 +12,11 @@ namespace Prorubim.Common.Revit.Elements
 {
     public class ImageType : RS.Element
     {
-        internal static Document Document
-        {
-            get { return DocumentManager.Instance.CurrentDBDocument; }
-        }
+        internal static Document Document => DocumentManager.Instance.CurrentDBDocument;
 
-        internal Autodesk.Revit.DB.ImageType InternalImageType
-        {
-            get;
-            private set;
-        }
+        internal Autodesk.Revit.DB.ImageType InternalImageType { get; private set; }
 
-        public override Autodesk.Revit.DB.Element InternalElement
-        {
-            get { return InternalImageType; }
-        }
+        public override Autodesk.Revit.DB.Element InternalElement => InternalImageType;
 
         private ImageType(string path)
         {

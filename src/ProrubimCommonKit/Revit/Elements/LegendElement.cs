@@ -12,20 +12,17 @@ namespace Prorubim.Common.Revit.Elements
     [DynamoServices.RegisterForTrace]
     public class LegendElement : RS.Element
     {
-        internal static Document Document
-        {
-            get { return DocumentManager.Instance.CurrentDBDocument; }
-        }
+        internal static Document Document => DocumentManager.Instance.CurrentDBDocument;
 
         private readonly Autodesk.Revit.DB.Element _internalElement;
-        private readonly ElementId _familySymbolId;
+        private readonly ElementId _elementTypeId;
 
         private LegendElement(Autodesk.Revit.DB.Element element)
         {
             _internalElement = element;
 
             SafeInit(() => InitLegendElement(element));
-            _familySymbolId = element.get_Parameter(BuiltInParameter.LEGEND_COMPONENT).AsElementId();
+            _elementTypeId = element.get_Parameter(BuiltInParameter.LEGEND_COMPONENT).AsElementId();
         }
 
         private void InitLegendElement(Autodesk.Revit.DB.Element element)
@@ -37,18 +34,18 @@ namespace Prorubim.Common.Revit.Elements
         /// <summary>
         /// Get LegendElement in some existing LegendView by it`s FamilyType
         /// </summary>
-        /// <param name="familyType">FamilyType for searching legend elements</param>
+        /// <param name="elementType">FamilyType for searching legend elements</param>
         /// <returns>Found legend elements list</returns>
-        public static IList<LegendElement> ByFamilyType(RS.FamilyType familyType)
+        public static IList<LegendElement> ByElementType(RS.ElementType elementType)
         {
-            var fs = familyType.InternalElement as FamilySymbol;
+            var elType = elementType.InternalElement;
             
-            if (fs != null)
+            if (elType != null)
             {
                 var allLegendElements = new FilteredElementCollector(Document).OfCategory(BuiltInCategory.OST_LegendComponents).ToElements();
 
                 var symbolLevelElements =
-                    allLegendElements.Where(x => x.get_Parameter(BuiltInParameter.LEGEND_COMPONENT).AsElementId() == fs.Id).ToList();
+                    allLegendElements.Where(x => x.get_Parameter(BuiltInParameter.LEGEND_COMPONENT).AsElementId() == elType.Id).ToList();
 
                 return symbolLevelElements.Select(element => new LegendElement(element)).ToList();
             }
@@ -64,11 +61,6 @@ namespace Prorubim.Common.Revit.Elements
             }
         }
 
-        public override string ToString()
-        {
-            return String.Format("Legend Component - FamilyType Id: {0}", _familySymbolId);
-        }
-
-
+        public override string ToString() => $"Legend Component - FamilyType Id: {_elementTypeId}";
     }
 }

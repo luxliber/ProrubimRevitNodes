@@ -12,22 +12,13 @@ namespace Prorubim.Common.Revit.Elements
     [DynamoServices.RegisterForTrace]
     public class LegendView : RS.Views.View
     {
-        internal static Document Document
-        {
-            get { return DocumentManager.Instance.CurrentDBDocument; }
-        }
+        internal static Document Document => DocumentManager.Instance.CurrentDBDocument;
 
-        internal Autodesk.Revit.DB.View InternalViewLegend
-        {
-            get; private set;
-        }
-        
-        public override Autodesk.Revit.DB.Element InternalElement
-        {
-            get { return InternalViewLegend; }
-        }
+        internal Autodesk.Revit.DB.View InternalViewLegend { get; private set; }
 
-        
+        public override Autodesk.Revit.DB.Element InternalElement => InternalViewLegend;
+
+
         private LegendView(string name)
         {
             SafeInit(() => InitLegendView(name));
@@ -54,11 +45,12 @@ namespace Prorubim.Common.Revit.Elements
         /// </summary>
         /// <param name="name">Name of the legend view</param>
         /// <returns>The legend view</returns>
-        public static LegendView ByName( string name )
+        public static LegendView ByName(string name)
         {
             if (name == null)
-                throw new ArgumentNullException("name");
-            return new LegendView( name );
+                throw new ArgumentNullException(nameof(name));
+
+            return new LegendView(name);
         }
 
         [IsVisibleInDynamoLibrary(false)]

@@ -33,30 +33,31 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DynamoCore">
-      <HintPath>..\..\..\..\..\Program Files\Autodesk\Revit 2022\AddIns\DynamoForRevit\DynamoCore.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2022\AddIns\DynamoForRevit\DynamoCore.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="DynamoServices">
-      <HintPath>..\..\..\..\..\Program Files\Autodesk\Revit 2022\AddIns\DynamoForRevit\DynamoServices.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2022\AddIns\DynamoForRevit\DynamoServices.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ProtoGeometry">
-      <HintPath>..\..\..\..\..\Program Files\Autodesk\Revit 2022\AddIns\DynamoForRevit\ProtoGeometry.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2022\AddIns\DynamoForRevit\ProtoGeometry.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPI">
-      <HintPath>..\..\..\..\..\Program Files\Autodesk\Revit 2022\RevitAPI.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2022\RevitAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIUI">
-      <HintPath>..\..\..\..\..\Program Files\Autodesk\Revit 2022\RevitAPIUI.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2022\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="RevitNodes">
-      <HintPath>..\..\..\..\..\Program Files\Autodesk\Revit 2022\AddIns\DynamoForRevit\Revit\RevitNodes.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2022\AddIns\DynamoForRevit\Revit\RevitNodes.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitServices">
-      <HintPath>..\..\..\..\..\Program Files\Autodesk\Revit 2022\AddIns\DynamoForRevit\Revit\RevitServices.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2022\AddIns\DynamoForRevit\Revit\RevitServices.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -146,7 +147,7 @@
       <Output TaskParameter="Assemblies" ItemName="AssemblyInfo" />
     </GetAssemblyIdentity>
     <!-- Generate customization dll -->
-    <GenerateResource UseSourcePath="true" Sources="$(ProjectDir)\Resources\ProrubimCommonKitImages.resx" OutputResources="$(ProjectDir)\Resources\ProrubimCommonKitImages.resources" References="$(FrameworkAssembliesPath)System.Drawing.dll" />
+    <GenerateResource SdkToolsPath="C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools" UseSourcePath="true" Sources="$(ProjectDir)\Resources\ProrubimCommonKitImages.resx" OutputResources="$(ProjectDir)\Resources\ProrubimCommonKitImages.resources" References="$(FrameworkAssembliesPath)System.Drawing.dll" />
     <AL TargetType="library" EmbedResources="$(ProjectDir)\Resources\ProrubimCommonKitImages.resources" OutputAssembly="$(OutDir)ProrubimCommonKit.customization.dll" Version="%(AssemblyInfo.Version)" />
   </Target>
 </Project>
