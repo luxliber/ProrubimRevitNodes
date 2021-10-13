@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Prorubim.Common</RootNamespace>
-    <AssemblyName>ProrubimCommonKit</AssemblyName>
+    <AssemblyName>ProrubimRevitNodes</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -21,7 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\bundle\Prorubim Revit Kit 2.x\bin\ProrubimCommonKit.XML</DocumentationFile>
+    <DocumentationFile>..\..\bundle\Prorubim Revit Kit 2.x\bin\ProrubimRevitNodes.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -76,7 +76,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\ProrubimCommonKitImages.resx">
+    <EmbeddedResource Include="Resources\ProrubimRevitNodesImages.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
@@ -147,7 +147,7 @@
       <Output TaskParameter="Assemblies" ItemName="AssemblyInfo" />
     </GetAssemblyIdentity>
     <!-- Generate customization dll -->
-    <GenerateResource SdkToolsPath="C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools" UseSourcePath="true" Sources="$(ProjectDir)\Resources\ProrubimCommonKitImages.resx" OutputResources="$(ProjectDir)\Resources\ProrubimCommonKitImages.resources" References="$(FrameworkAssembliesPath)System.Drawing.dll" />
-    <AL TargetType="library" EmbedResources="$(ProjectDir)\Resources\ProrubimCommonKitImages.resources" OutputAssembly="$(OutDir)ProrubimCommonKit.customization.dll" Version="%(AssemblyInfo.Version)" />
+    <GenerateResource SdkToolsPath="C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools" UseSourcePath="true" Sources="$(ProjectDir)\Resources\ProrubimRevitNodesImages.resx" OutputResources="$(ProjectDir)\Resources\ProrubimRevitNodesImages.resources" References="$(FrameworkAssembliesPath)System.Drawing.dll" />
+    <AL TargetType="library" EmbedResources="$(ProjectDir)\Resources\ProrubimRevitNodesImages.resources" OutputAssembly="$(OutDir)ProrubimRevitNodes.customization.dll" Version="%(AssemblyInfo.Version)" />
   </Target>
 </Project>

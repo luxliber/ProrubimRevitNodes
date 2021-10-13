@@ -7,8 +7,8 @@
     <ProjectGuid>{B0AB9CC8-4CE6-4F7E-9EEB-6A45A568BE6D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Prorubim.CommonUI</RootNamespace>
-    <AssemblyName>ProrubimCommonKitUI</AssemblyName>
+    <RootNamespace>Prorubim.Common.UI</RootNamespace>
+    <AssemblyName>ProrubimRevitNodesUI</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -73,9 +73,9 @@
     <EmbeddedResource Include="Resources\ProrubimCommonKitImagesUI.resx" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProrubimCommonKit\ProrubimCommonKit.csproj">
+    <ProjectReference Include="..\ProrubimRevitNodes\ProrubimRevitNodes.csproj">
       <Project>{e9837691-7245-4e24-8352-2ad4f6093355}</Project>
-      <Name>ProrubimCommonKit</Name>
+      <Name>ProrubimRevitNodes</Name>
       <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
@@ -92,7 +92,7 @@
       <Output TaskParameter="Assemblies" ItemName="AssemblyInfo" />
     </GetAssemblyIdentity>
     <!-- Generate customization dll -->
-    <GenerateResource UseSourcePath="true" Sources="$(ProjectDir)\Resources\ProrubimCommonKitImagesUI.resx" OutputResources="$(ProjectDir)\Resources\ProrubimCommonKitImagesUI.resources" References="$(FrameworkAssembliesPath)System.Drawing.dll" />
-    <AL TargetType="library" EmbedResources="$(ProjectDir)\Resources\ProrubimCommonKitImagesUI.resources" OutputAssembly="$(OutDir)ProrubimCommonKitUI.customization.dll" Version="%(AssemblyInfo.Version)" />
+    <GenerateResource UseSourcePath="true" SdkToolsPath="C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools" Sources="$(ProjectDir)\Resources\ProrubimCommonKitImagesUI.resx" OutputResources="$(ProjectDir)\Resources\ProrubimCommonKitImagesUI.resources" References="$(FrameworkAssembliesPath)System.Drawing.dll" />
+    <AL TargetType="library" EmbedResources="$(ProjectDir)\Resources\ProrubimCommonKitImagesUI.resources" OutputAssembly="$(OutDir)ProrubimRevitNodesUI.customization.dll" Version="%(AssemblyInfo.Version)" />
   </Target>
 </Project>
